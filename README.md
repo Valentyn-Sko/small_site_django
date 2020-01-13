@@ -1,0 +1,1 @@
+# smal_site_django
