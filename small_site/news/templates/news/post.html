@@ -1,0 +1,12 @@
+{% extends 'mainApp/wrapper.html' %}
+{% block title %}
+    News page
+{% endblock %}
+
+
+{% block content %}
+{% for post in oblect_list %}
+<a href="/news/{{post.id}}"> <h3>{{ post.title }}</h3></a>
+<h5> {{post.date|data:Y-m-d}}</h5>
+{% endfor %}
+{% endblock %}

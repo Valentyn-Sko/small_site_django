@@ -1,0 +1,9 @@
+{% extends 'mainApp/wrapper.html' %}
+{% csrf_token %}
+{% block content %}
+
+BLAAAA CONTACTS
+{% for val in values %}
+<p>{{ val }}</p>
+{% endfor %}
+{% endblock %}
