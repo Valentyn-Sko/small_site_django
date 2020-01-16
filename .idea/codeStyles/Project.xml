@@ -1,0 +1,10 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <MarkdownNavigatorCodeStyleSettings>
+      <option name="RIGHT_MARGIN" value="72" />
+    </MarkdownNavigatorCodeStyleSettings>
+    <codeStyleSettings language="Python">
+      <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
