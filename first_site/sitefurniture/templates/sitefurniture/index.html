@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Names
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Products: </h1>
+{% for item in products %}
+{% include 'sitefurniture/includes/post_card.html' %}
+{% endfor %}
+{% endblock %}

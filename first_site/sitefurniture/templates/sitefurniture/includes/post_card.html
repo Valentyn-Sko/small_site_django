@@ -1,0 +1,18 @@
+<div class="card mb-3">
+    <div class="card-header">
+        {{ item.date_pub }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.description|truncatewords:15 }}</p>
+
+    </div>
+    <div class="card-footer text-muted">
+        Types of Furniture:
+        {% for ft in item.types.all %}
+        <p class="card-text"> {{ft.title}}</p>
+
+        {% endfor %}
+
+    </div>
+</div>

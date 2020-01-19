@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <div class="card-header">
+        {{ item.date_pub }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.description|truncatewords:15 }}</p>
+        <!--a href="{% url 'post_detail_url' slug=post.slug %}" class="btn btn-light">Read</a-->
+        <!--a href="{{ post.get_absolute_url }}" class="btn btn-light">Read</a-->
+    </div>
+    <div class="card-footer text-muted">
+        Tags:
+        {% for ft in item.tags.all %}
+        <!--a href="{{tag.get_absolute_url}}"-->{{ft.title}}<!--/a-->
+        {% endfor %}
+    </div>
+</div>

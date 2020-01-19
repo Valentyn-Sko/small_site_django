@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <title>
+        {% block title %}
+        Default Title
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+                 <a class="nav-link" href="{% url 'post_list_url' %}">Posts</a>
+             </li>
+             <li class="nav-item active">
+                 <a class="nav-link" href="{% url 'tags_list_url' %}">Tags</a>
+             </li>
+
+
+         </ul>
+         <form class="form-inline my-2 my-lg-0" action="{% url 'post_list_url' %}">
+             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+
+     </div>-->
+</nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 offset-md-2">
+            {% block content %}
+            Default Content
+            {% endblock %}
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav class="col-5 offset-md-3">
+        <ul class="pagination">
+            <li class="page-item {% if not previous_url %}disabled{% endif %}">
+                <a class="page-link" href="{{previous_url}}">Previous</a>
+            </li>
+
+
+            {% for n in page_object.paginator.page_range %}
+            {% if page_object.number == n%}
+
+            <li class="page-item active"><a class="page-link " href="?page={{n}}">{{n}} </a></li>
+
+            {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+            <li class="page-item"><a class="page-link" href="?page={{n}}">{{n}}</a></li>
+            {% endif %}
+
+            {% endfor %}
+            <li class="page-item {% if not next_url %}disabled{% endif %}">
+                <a class="page-link " href="{{next_url}}">Next</a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+
+{% if request.user.is_authenticated and request.user.is_staff %}
+<div class="admin-panel align-item-center">
+    <a href="/admin" class="btn btn-outline-info">Admin</a>
+    {% block admin-panel %}
+    {% endblock %}
+</div>
+{% endif %}
+
+
+</body>
+</html>
