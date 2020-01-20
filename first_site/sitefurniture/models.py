@@ -42,6 +42,34 @@ class ProductPhoto(models.Model):
             self.slug = gen_slug(self.url)
         super().save(*args, **kwargs)
 
+#https://images.ua.prom.st/1043446275_w640_h640_stul-s14-ekokozha.jpg
+#https://images.ua.prom.st/1043445148_w640_h640_stul-s14-ekokozha.jpg
+#https://images.ua.prom.st/1043445094_w640_h640_stul-s14-ekokozha.jpg
+#https://images.ua.prom.st/1043445144_w640_h640_stul-s14-ekokozha.jpg
+
+
+#https://images.ua.prom.st/2160393609_w640_h640_kreslo-myagkoe-dlya.jpg
+#https://images.ua.prom.st/2160394530_w640_h640_kreslo-myagkoe-dlya.jpg
+#https://images.ua.prom.st/2160393403_w640_h640_kreslo-myagkoe-dlya.jpg
+#https://images.ua.prom.st/2160393208_w640_h640_kreslo-myagkoe-dlya.jpg
+
+#https://images.ua.prom.st/2072959352_w640_h640_stul-nik-eames.jpg
+#https://images.ua.prom.st/2072959353_w640_h640_stul-nik-eames.jpg
+
+#https://images.ua.prom.st/2023973796_w640_h640_stol-knizhka-matroluxe.jpg
+#https://images.ua.prom.st/1589304368_w640_h640_stol-knizhka-matroluxe.jpg
+#https://images.ua.prom.st/2023973797_w640_h640_stol-knizhka-matroluxe.jpg
+#https://images.ua.prom.st/2023973798_w640_h640_stol-knizhka-matroluxe.jpg
+
+#https://images.ua.prom.st/1645822119_w640_h640_stil-transformer-alfa.jpg
+#https://images.ua.prom.st/1645822120_w640_h640_stil-transformer-alfa.jpg
+#https://images.ua.prom.st/782153706_w640_h640_stil-transformer-alfa.jpg
+#https://images.ua.prom.st/413118025_w640_h640_stil-transformer-alfa.jpg
+
+#https://images.ua.prom.st/1312043396_w640_h640_stol-raskladnoj-seattle.jpg
+#https://images.ua.prom.st/1259441745_w640_h640_stol-raskladnoj-seattle.jpg
+#https://images.ua.prom.st/1259441748_w640_h640_stol-raskladnoj-seattle.jpg
+#
 
 class Product(models.Model):
     title = models.CharField(max_length=50, unique=True, db_index=True)
