@@ -1,0 +1,35 @@
+<div class="card mb-3">
+    <div class="card-header">
+        {{ item.date_pub }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.description|truncatewords:15 }}</p>
+
+    </div>
+  <div class="card-body mb-3">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner mb-3">
+       {% for pp in item.photos.all %}
+    <div class="carousel-item active mb-3">
+      <img class="d-block w-50" src="{{pp.url}}" alt="Первый слайд">
+    </div>
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+     </div>
+
+
+</div>
+
+
+

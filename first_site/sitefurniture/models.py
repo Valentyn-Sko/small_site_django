@@ -1,6 +1,7 @@
 from time import time
 
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 
@@ -87,6 +88,10 @@ class Product(models.Model):
     def __str__(self):
         return '{}'.format(self.title)
 
+    def get_absolute_url(self):
+        print(reverse('product_detail_url', kwargs={'slug': self.slug}))
+        return reverse('product_detail_url', kwargs={'slug': self.slug})
+
     class Meta:
         ordering = ['title']
 
@@ -97,6 +102,10 @@ class TypeFurniture(models.Model):
 
     def __str__(self):
         return '{}'.format(self.title)
+
+    def get_absolute_url(self):
+        print("---***---", reverse('type_detail_url', kwargs={'slug': self.slug}))
+        return reverse('type_detail_url', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.id:

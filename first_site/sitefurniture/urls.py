@@ -20,5 +20,7 @@ from .views import *
 urlpatterns = [
     path('', products_list, name='post_list_url'),
     # path('post/create/', PostCreate.as_view(), name='post_create_url'),
-    # path('post/<str:slug>/', PostDetail.as_view(), name='post_detail_url'),  # str по умолчанию уже .
+    path('types', types_list, name='types_list_url'),
+    path('type/<str:slug>/', TypeDetail.as_view(), name='type_detail_url'),
+    path('product/<str:slug>/', ProductDetail.as_view(), name='product_detail_url'),  # str по умолчанию уже .
 ]

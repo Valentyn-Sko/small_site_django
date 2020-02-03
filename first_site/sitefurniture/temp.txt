@@ -2,3 +2,8 @@
 
 pr.photos.add(pps)
 pr.types.add(tfk)
+
+
+{% for item in types.product.all %}
+{% include 'sitefurniture/includes/post_card.html' %}
+{% endfor %}

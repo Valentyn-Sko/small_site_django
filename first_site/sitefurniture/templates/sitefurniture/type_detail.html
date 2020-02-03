@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Products by type
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Products by type: {{typeF.title}}</h1>
+<div class="mb-3">
+{% for item in typeF.products.all%}
+    {% include 'sitefurniture/includes/post_card.html' %}
+
+
+{% endfor %}
+</div>
+{% endblock %}

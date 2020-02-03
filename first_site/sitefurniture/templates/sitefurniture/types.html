@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+Names
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Types: </h1>
+{% for t in types %}
+<div><a href="{{t.get_absolute_url}}">{{t.title}}</a>
+</div>
+{% endfor %}
+{% endblock %}
